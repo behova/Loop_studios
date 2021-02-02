@@ -1,0 +1,102 @@
+@use '../base/variables' as *;
+@import '../base/media';
+
+section {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(auto, 1fr));
+    grid-template-rows: repeat(13, minmax(auto, 1fr));
+    background-color: $white;
+    position: relative;
+
+    .info-card {
+        
+        z-index: 3;
+        grid-column: 10/17;
+        grid-row: 7/13;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10%;
+
+        border-top: rgba(0, 0, 0, 0.315);
+        box-shadow: 1px 1px rgb(179, 179, 179);
+
+
+        h2 {
+            font-size: 45px;
+        
+            color: $black;
+        }
+    
+        p {
+            font-size: 14px;
+            margin-bottom: 2%;
+            color: $dark-grey;
+            line-height: 1.8;
+        }
+    
+
+    }
+
+    .hero-img {
+        grid-column: 3/13;
+        grid-row: 3/12;
+
+        .mobile {
+            display: none;
+        }
+        
+    }
+
+    @include media("<=tablet") {
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: 1fr;
+
+        .hero-img {
+            grid-row: 2/5;
+            grid-column: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2%;
+            .desktop {
+                display: none;
+            }
+            .mobile {
+                display: block;
+                width: 90vw;
+                height: auto;
+            }
+        }
+
+        .info-card {
+            grid-row: 5/10;
+            grid-column: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: none;
+            box-shadow: none;
+            margin-top: 4.8%;
+
+            padding: 1%;
+
+            h2 {
+                font-size: 34px;
+            
+                color: $black;
+            }
+        
+            p {
+                font-size: 17px;
+                margin: 4%;
+                color: $dark-grey;
+                line-height: 2;
+            }
+            
+        }
+
+    }
+    
+}
