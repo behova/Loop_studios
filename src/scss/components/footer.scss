@@ -80,6 +80,56 @@ footer {
         margin-right: 15%;
 
     }
+
+    @include media("<=tablet") {
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr;
+
+        .flogo {
+            grid-column: 1;
+            grid-row: 1;
+            justify-self: center;
+            margin: 0%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .nav-links-footer {
+            grid-column: 1;
+            grid-row: 2;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0%;
+
+            li {
+                padding-bottom: 5%;
+            }
+        }
+
+        .social-badge {
+            grid-column: 1;
+            grid-row: 3;
+            margin: 0%;
+            padding: 0%;
+            justify-content: center;
+
+            a {
+                margin: 12px;
+            }
+        }
+
+        .copy {
+            grid-column: 1;
+            grid-row: 4;
+            justify-self: center;
+            text-align: center;
+            margin: 0%;
+        }
+    }
 }
 
 
